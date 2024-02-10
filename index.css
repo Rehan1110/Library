@@ -6,6 +6,7 @@ body {
   display: flex;
   background-color: rgb(3, 3, 43);
   width: 100%;
+  position: relative;
   
 }
 .nav-heading{
@@ -22,4 +23,7 @@ body {
   font-size: 20px;
   border: none;
   cursor: pointer;
+  position: absolute;
+  right: 60px;
+  top: 20px;
 }
