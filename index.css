@@ -44,3 +44,15 @@ body {
   text-align: center;
   padding: 2px 0px;
 }
+#modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 250px;
+  margin-left: 500px;
+  margin-top: 20px;
+  background-color:rgb(207, 191, 191);
+  border-radius: 4px;
+
+}
