@@ -45,14 +45,40 @@ body {
   padding: 2px 0px;
 }
 #modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  display: none;
+  padding-left: 10px;
+  row-gap: 20px;
   width: 300px;
   height: 250px;
   margin-left: 500px;
   margin-top: 20px;
   background-color:rgb(207, 191, 191);
   border-radius: 4px;
-
+}
+.new-Book {
+  font-size: 20px;
+}
+.input-group {
+  padding: 10px 5px;
+}
+.modal-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  right: -10px;
+  top: -10px;
+  cursor: pointer;
+}
+.form-submit-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
 }
