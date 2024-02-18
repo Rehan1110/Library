@@ -82,3 +82,15 @@ body {
   padding: 8px 12px;
   cursor: pointer;
 }
+#body {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: wheat;
+  align-items: center;
+  padding: 5px 0px;
+  font-size: 24px;
+  margin: 10px 20px;
+}
