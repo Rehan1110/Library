@@ -94,3 +94,12 @@ body {
   font-size: 24px;
   margin: 10px 20px;
 }
+.read-button,
+.remove-button {
+  background-color: green;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 3px;
+  border: none;
+  margin-bottom: 5px;
+}
