@@ -21,10 +21,10 @@ window.addEventListener('click', (e) => {
   }
 })
 
-ReadValue.addEventListener('click', () =>{
-  console.log("I am clicked");
-  console.log(ReadValue.value);
-})
+// ReadValue.addEventListener('click', () =>{
+//   console.log("I am clicked");
+//   console.log(ReadValue.value);
+// })
 
 const myLibrary = [];
 
