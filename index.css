@@ -103,3 +103,7 @@ body {
   border: none;
   margin-bottom: 5px;
 }
+.body-container {
+  display: grid;
+  grid-template-columns: repeat(3 1fr);
+}
