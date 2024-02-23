@@ -3,7 +3,7 @@
 let addBtn = document.querySelector('.add-button');
 let modal = document.querySelector('#modal');
 let modalCloseBtn = document.querySelector('.modal-close-button');
-let ReadValue = document.querySelector('.read-button');
+let formSubmitButton = document.querySelector('.form-submit-button');
 
 addBtn.addEventListener('click',(e)=>{
   e.preventDefault();
@@ -21,10 +21,11 @@ window.addEventListener('click', (e) => {
   }
 })
 
-ReadValue.addEventListener('click', () =>{
-  console.log("I am clicked");
-  console.log(ReadValue.value);
+formSubmitButton.addEventListener('click', function(e){
+  e.preventDefault();
+  console.log('I am clicked');
 })
+
 
 const myLibrary = [];
 
