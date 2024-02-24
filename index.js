@@ -77,6 +77,7 @@ AddNewBook.addEventListener('submit', function(e){
   e.preventDefault();
   addBookToLibrary();
   render();
+  ModalClose();
   // ModalClose();
   // myLibrary.push(newBook);
   // let books ='';
