@@ -12,36 +12,72 @@ addBtn.addEventListener('click',(e)=>{
   modal.style.display = 'block';
 })
 
-modalCloseBtn.addEventListener('click', (e) =>{
+function ModalClose(){
+modal.style.display = 'none';
+}
+
+modalCloseBtn.addEventListener('click',(e)=>{
   e.preventDefault();
-  modal.style.display = 'none';
-})
+  ModalClose();
+});
 
 window.addEventListener('click', (e) => {
-  if(e.target == modal){
-    modal.style.display = 'none';
+  if(e.target === modal){
+    ModalClose();
   }
 });
+
+function removeBook(index){
+  myLibrary.splice(index, 1);
+  render();
+}
+
 const myLibrary = [];
 
 function Book(title, author, pages, ReadOrNot) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.ReadOrNot = this.ReadOrNot;
+  this.ReadOrNot = ReadOrNot;
+}
+
+Book.prototype.toggleRead = function() {
+  this.ReadOrNot =! this.ReadOrNot;
+}
+function ToggleRead(index) {
+myLibrary[index].toggleRead();
+render();
+}
+
+function render() {
+  let LibraryEl = document.querySelector('.body-container');
+  LibraryEl.innerHTML = "";
+  for(let i=0; i < myLibrary.length; i++){
+    let book = myLibrary[i];
+    let bookElement = document.createElement("div");
+    bookElement.setAttribute("class", "body");
+    bookElement.innerHTML = `<p>Title: ${book.title}</p>
+    <p>Author: ${book.author}</p>
+    <p>Pages: ${book.pages}</p>
+    <button class="read-button">${book.ReadOrNot ? "Readed":"Not Readed"}</button>
+    <button class="remove-button" onclick={removeBook(${i})}>Remove</button>`
+    LibraryEl.appendChild(bookElement);
+  }
 }
 
 function addBookToLibrary() {
-let Title = document.querySelector('#title').value
-let Author = document.querySelector('#author').value
-let Pages = document.querySelector('#pages').value
-let Read = document.getElementById('read').checked
-let newBook = new Book(Title, Author, Pages, Read);
+let title = document.querySelector('#title').value
+let author = document.querySelector('#author').value
+let pages = document.querySelector('#pages').value
+let ReadOrNot = document.querySelector('#read').checked
+let newBook = new Book(title, author, pages, ReadOrNot);
 myLibrary.push(newBook);
 }
 AddNewBook.addEventListener('submit', function(e){
   e.preventDefault();
   addBookToLibrary();
+  render();
+  // ModalClose();
   // myLibrary.push(newBook);
   // let books ='';
   // books.innerHTML += ` 

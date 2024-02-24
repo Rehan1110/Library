@@ -82,7 +82,7 @@ body {
   padding: 8px 12px;
   cursor: pointer;
 }
-#body {
+.body {
   display: flex;
   flex-direction: column;
   width: 250px;
@@ -105,5 +105,5 @@ body {
 }
 .body-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
