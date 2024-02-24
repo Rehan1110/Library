@@ -59,7 +59,7 @@ function render() {
     bookElement.innerHTML = `<p>Title: ${book.title}</p>
     <p>Author: ${book.author}</p>
     <p>Pages: ${book.pages}</p>
-    <button class="read-button">${book.ReadOrNot ? "Readed":"Not Readed"}</button>
+    <button class="read-button" onclick={ToggleRead(${i})}>${book.ReadOrNot ? "Readed":"Not Readed"}</button>
     <button class="remove-button" onclick={removeBook(${i})}>Remove</button>`
     LibraryEl.appendChild(bookElement);
   }
