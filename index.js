@@ -3,9 +3,8 @@
 let addBtn = document.querySelector('.add-button');
 let modal = document.querySelector('#modal');
 let modalCloseBtn = document.querySelector('.modal-close-button');
-let formSubmitButton = document.querySelector('.form-submit-button');
-let body = document.querySelector('#body');
-let books ='';
+let AddNewBook = document.querySelector('#form');
+let bodyContainer = document.querySelector('.body-container');
 
 
 addBtn.addEventListener('click',(e)=>{
@@ -22,11 +21,7 @@ window.addEventListener('click', (e) => {
   if(e.target == modal){
     modal.style.display = 'none';
   }
-})
-
-
-
-
+});
 const myLibrary = [];
 
 function Book(title, author, pages, ReadOrNot) {
@@ -37,24 +32,25 @@ function Book(title, author, pages, ReadOrNot) {
 }
 
 function addBookToLibrary() {
- 
-  // do stuff here
-}
-formSubmitButton.addEventListener('click', function(e){
-  let Title = document.querySelector('#title').value
+let Title = document.querySelector('#title').value
 let Author = document.querySelector('#author').value
 let Pages = document.querySelector('#pages').value
-let Read = document.querySelector('#read').check
-let book = new Book(Title, Author, Pages, Read);
+let Read = document.getElementById('read').checked
+let newBook = new Book(Title, Author, Pages, Read);
+myLibrary.push(newBook);
+}
+AddNewBook.addEventListener('submit', function(e){
   e.preventDefault();
-  myLibrary.push(book);
-  console.log(myLibrary);
-  
-  books.innerHTML = ` <p>Title: Money</p>
-  <p>Author: Rehan</p>
-  <p>Pages: 120</p>
-  <button class="read-button">Not Read</button>
-  <button class="remove-button">Remove</button>`
-
-  body.appendChild(books);
+  addBookToLibrary();
+  // myLibrary.push(newBook);
+  // let books ='';
+  // books.innerHTML += ` 
+  // <div id="body">
+  // <p>Title: Money</p>
+  // <p>Author: Rehan</p>
+  // <p>Pages: 120</p>
+  // <button class="read-button">Not Read</button>
+  // <button class="remove-button">Remove</button>
+  // </div>`
+  // 
 })
